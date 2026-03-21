@@ -1,6 +1,6 @@
 ---
 title : '如何建立Sega游戏服务器'
-
+description: '详细教程：使用 AquaDX 和 ARTEMIS 搭建 Sega 街机游戏本地服务器，涵盖 Docker 部署、环境配置和常见问题。'
 published: 2025-08-23
 
 tags: [教程, 服务器]

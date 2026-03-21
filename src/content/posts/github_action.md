@@ -1,6 +1,6 @@
 ---
 title: '使用Github Action'
-
+description: 'GitHub Actions 入门教程：了解 CI/CD 概念，学习如何编写 workflow 实现自动化构建、测试和部署。'
 published: 2025-08-15T03:00:00+08:00
 tags: [教程]
 author: Applesaber
