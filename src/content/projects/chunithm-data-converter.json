@@ -1,0 +1,25 @@
+{
+    "title": "Chunithm Data Converter",
+    "description": "一个用于将 落雪(Lxns) 或 水鱼(Diving-Fish) 的中二节奏成绩数据转换为 MuNET 离线兼容 JSON 格式的开源转换器。支持在线 Web、本地后端及 CLI 三端。",
+    "image": "",
+    "category": "website",
+    "techStack": [
+        "Vue 3",
+        "TypeScript",
+        "Naive UI",
+        "Python",
+        "Flask"
+    ],
+    "status": "completed",
+    "liveDemo": "https://www.applesaber.site/chunithm-data-converter/",
+    "sourceCode": "https://github.com/MuNET-OSS/chunithm-data-converter",
+    "startDate": "2026-03-20",
+    "endDate": "2026-03-22",
+    "featured": true,
+    "tags": [
+        "Open Source Project",
+        "Chunithm",
+        "MuNET",
+        "Tool"
+    ]
+}
