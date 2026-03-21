@@ -11,8 +11,7 @@ sourceLink: 'https://github.com/MuNET-OSS/chunithm-data-converter'
 ::github{repo="MuNET-OSS/chunithm-data-converter"}
 
 :::important
-**请注意：** 该转换器功能现已**原生集成至 MuNET 中**！如果你使用的是最新版的 MuNET，可以直接在游戏或服务端内直接使用成绩导入功能，无需再使用此独立工具进行繁琐的外部转换。
-本工具现主要作为遗留环境支持、技术演示以及供有特殊离线转换需求的玩家使用。
+该转换器功能现已**原生集成至 MuNET 中**！可以在MuNET的 [中二节奏数据导出/导入页面](https://portal.mumur.net/chu3/transfer) 中使用
 :::
 
 将落雪查分器 (Lxns) 或 水鱼查分器 (Diving-Fish) 的 Chunithm (中二节奏) 成绩数据，转换为 **MuNET** 兼容的 JSON 导入格式。
