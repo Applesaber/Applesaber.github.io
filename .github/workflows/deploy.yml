@@ -38,3 +38,41 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URLs to IndexNow
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          SITEMAP_URL="https://www.applesaber.site/sitemap-0.xml"
+
+          URLS=$(curl -s "$SITEMAP_URL" | grep -oP '(?<=<loc>)[^<]+')
+
+          URL_LIST=$(echo "$URLS" | jq -R -s 'split("\n") | map(select(length > 0))')
+
+          PAYLOAD=$(cat <<EOF
+          {
+            "host": "www.applesaber.site",
+            "key": "$INDEXNOW_KEY",
+            "keyLocation": "https://www.applesaber.site/${INDEXNOW_KEY}.txt",
+            "urlList": $URL_LIST
+          }
+          EOF
+          )
+
+          echo "Submitting $(echo "$URLS" | wc -l) URLs to IndexNow..."
+
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$PAYLOAD")
+
+          echo "IndexNow response: HTTP $HTTP_CODE"
+          if [ "$HTTP_CODE" -ge 200 ] && [ "$HTTP_CODE" -lt 300 ]; then
+            echo "IndexNow submission successful!"
+          else
+            echo "::warning::IndexNow submission returned HTTP $HTTP_CODE"
+          fi
