@@ -91,3 +91,23 @@ const titleInterval = config?.title?.interval ?? 1.5;
         pointer-events: none;
     }
 </style>
+
+<!-- 对不执行 JS 的爬虫（如 Bingbot）隐藏 overlay，确保内容可见 -->
+<noscript>
+<style>
+    #loading-overlay {
+        display: none !important;
+    }
+    html.is-loading {
+        overflow: visible !important;
+    }
+    html.is-loading,
+    html.is-loading *,
+    .onload-animation-up,
+    .onload-animation-down {
+        opacity: 1 !important;
+        visibility: visible !important;
+        animation: none !important;
+    }
+</style>
+</noscript>

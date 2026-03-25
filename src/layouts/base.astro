@@ -162,6 +162,8 @@ const umamiScripts = umamiConfig.scripts || ""; // 获取Umami scripts配置
         <meta name="viewport" content="width=device-width" />
         <!-- generator -->
         <meta name="generator" content={Astro.generator} />
+        <!-- Canonical URL -->
+        <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
         <!-- Bing Webmaster Tools verification -->
         <meta name="msvalidate.01" content="1287968EAC27C44284E3669F147CA67F" />
         <!-- favicons -->

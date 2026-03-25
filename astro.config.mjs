@@ -140,7 +140,14 @@ export default defineConfig({
         svelte({
             preprocess: vitePreprocess(),
         }),
-        sitemap(),
+        sitemap({
+            filter: (page) =>
+                !page.includes('/admin/') &&
+                !page.includes('/albums/') &&
+                !page.includes('/diary/') &&
+                !page.includes('/atom/') &&
+                !page.includes('/rss/'),
+        }),
     ],
     markdown: {
         remarkPlugins: [
